@@ -1,0 +1,46 @@
+﻿
+@{
+    Layout = null;
+    string[] names = { "ahmed", "salah", "ahmed" };
+    Department dp = new Department() { Department_Id = 101, department_name= "iti" };
+    List<Department> Dept = [
+    new Department(){Department_Id=2,department_name="sameh"},
+    new Department(){Department_Id=3,department_name="mohamed"},
+    new Department(){Department_Id=4,department_name="yehya"},
+    ];
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>show</title>
+    <h1>hello this is <ul>
+            @foreach(string i in names)
+            {
+                   <li>@i</li> 
+            }
+          </ul></h1>
+          <h2> department name is @dp.department_name:: ID : @dp.Department_Id</h2>
+          <h3>@dp</h3>
+          
+          <table border="2">
+              <thead>
+                  <tr>depname</tr>
+                  <tr>dep id</tr>
+              </thead>
+              <tbody>
+            @foreach(var i in Dept)
+            {
+                <tr>
+                    <td>@i.department_name</td>
+                    <td>@i.Department_Id</td>
+                </tr>
+            }
+        </tbody>
+          </table>
+</head>
+<body>
+</body>
+</html>
